@@ -25,11 +25,11 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 
-function currentSlide(n) {
+const currentSlide = (n) => {
   showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
+const showSlides = (n) => {
   let i;
   let slides = document.getElementsByClassName("display");
   let tabs = document.getElementsByClassName("myTabs");
@@ -100,7 +100,7 @@ const navigateTo = (index) => {
     }
 };
 
-function validateEmail(email) {
+const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
@@ -123,7 +123,7 @@ function validateEmail(email) {
       emailError.classList.add('hidden');
       formDiv.classList.remove('active');
       alert('Form submitted successfully!');
-      document.getElementById('form').submit();
+      // document.getElementById('form').submit();
     }
   });
   
