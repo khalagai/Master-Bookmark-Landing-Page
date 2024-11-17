@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Bookmark landing page</title>
+</head>
+<body>
+  <div class="flex flex-col gap-8 font-rubik">
+    <header>
+      <nav class="py-8 relative md:flex justify-center" role="navigation" aria-label="Main Navigation">
+        <div class="flex justify-between items-center px-4 lg:pl-32">
+          <a href="#" aria-label="Company logo">
+            <img class="h-5 md:h-6 md:w-48" src="../images/logo-bookmark.svg" alt="Company logo">
+          </a>
+          <a id="openMenu" class="transform hover:scale-125 transition ease duration-300 md:hidden" href="#" aria-label="Open menu">
+            <img src="../images/icon-hamburger.svg" alt="Open menu icon">
+          </a>
+        </div>        
+        <div id="menu" class="h-0 overflow-hidden px-4 z-10 absolute w-full top-0 bg-neutral-verydarkblue-0 bg-opacity-95 flex flex-col transform ease duration-500 md:h-full md:static md:text-neutral-verydarkblue-0 md:bg-white md:items-end lg:pr-32">
+          <div class="flex justify-between py-8 md:hidden">
+            <a class="logo" href="#" aria-label="Company logo">
+              <img class="h-5" src="../images/logo-bookmark.svg" alt="Company logo">
+            </a>
+            <a id="closeMenu" class="transform hover:scale-125 transition ease duration-300" href="#" aria-label="Close menu">
+              <img class="h-4" src="../images/icon-close.svg" alt="Close menu icon">
+            </a>
+          </div>
+          <div class="flex flex-col md:flex-row md:items-center md:gap-4">
+            <ul class="text-center uppercase text-white text-sm font-semibold md:text-neutral-verydarkblue-0 md:flex md:flex-row">
+              <li class="border-y w-full p-4 md:hover:text-primary-softred-0 font-light inline-block md:border-none">
+                <a class="nav-link relative" href="#" role="menuitem">
+                  <span>Features</span>
+                </a>
+              </li>
+              <li class="border-b w-full p-4 md:hover:text-primary-softred-0 font-light inline-block md:border-none">
+                <a class="nav-link relative" href="#" role="menuitem">
+                  <span>Pricing</span>
+                </a>
+              </li>
+              <li class="border-b w-full p-4 md:hover:text-primary-softred-0 font-light pb-4 inline-block md:border-none">
+                <a class="nav-link relative" href="#" role="menuitem">
+                  <span>Contact</span>
+                </a>
+              </li>
+            </ul>            
+            <button class="btn btn-login text-white mt-4 md:bg-primary-softred-0 md:mt-0 md:px-3" aria-label="Login">
+              Login
+            </button>           
+            <div class="flex mt-32 mb-8 justify-center gap-4 md:hidden">
+              <a href="#" aria-label="Facebook">
+                <img class="cursor-pointer h-5 transform hover:scale-125 transition ease duration-300" src="../images/icon-facebook.svg" alt="Facebook icon">
+              </a>
+              <a href="#" aria-label="Twitter">
+                <img class="cursor-pointer h-5 transform hover:scale-125 transition ease duration-300" src="../images/icon-twitter.svg" alt="Twitter icon">
+              </a>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex flex-col gap-8 text-xs min-[480px]:text-sm md:text-base lg:text-lg">
+
+      <section class="flex flex-col gap-8 sm:flex-row-reverse">
+        <div class="flex flex-col relative sm:w-1/2 sm:col-start-2 sm:row-start-1 justify-center items-center">
+          <div class="bg-primary-softblue-0 w-5/6 h-5/6 rounded-l-full absolute bottom-0 right-0 -z-10"></div>
+          <div class="flex items-center justify-center">
+            <img src="../images/illustration-hero.svg" alt="Illustration image">
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 sm:w-1/2 sm:pl-8 sm:pr-0 sm:justify-center lg:items-start lg:text-left lg:pl-32 lg:gap-8">
+          <div class="flex flex-col px-4 sm:px-0 text-center gap-4 items-center sm:items-start sm:text-left">
+            <h1 class="font-bold text-2xl sm:text-xl md:text-3xl lg:text-4xl sm:items-start">A Simple Bookmark Manager</h1>
+            <p>A clean and simple interface to organize your favourite websites. Open a new 
+              browser tab and see your sites load instantly. Try it for free.
+            </p>
+          </div>
+          <div class="flex gap-4 justify-center sm:justify-start sm:px-0 md:gap-4">
+            <button class="btn btn-primary">Get it on Chrome</button>
+            <button class="btn btn-secondary">Get it on Firefox</button>
+          </div>
+        </div>  
+      </section>
+
+      <section class="flex flex-col text-center p-4 sm:px-20 md:px-40 md:gap-8">
+        <div class="lg:justify-center lg:items-center">
+          <h2 class="font-bold text-xl pb-4 md:text-2xl lg:text-3xl">Features</h2>
+          <p>
+            Our aim is to make it quick and easy for you to access your favourite websites. 
+            Your bookmarks sync between your devices so you can access them on the go.
+          </p>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-0 md:flex-row md:border-b">
+          <div class="flex items-center justify-center min-w-40 md:w-1/3">
+            <p onclick="currentSlide(1)" id="dis1" role='button' tabindex='0' aria-label='Simple Bookmarking' class="w-full display p-3 font-medium transform hover:text-primary-softred-0 cursor-pointer transition-all ease duration-200 lg:border-b-2">Simple Bookmarking</p>
+          </div>
+          <hr class="w-full md:hidden">
+          <div class="flex items-center justify-center min-w-40 md:w-1/3">
+            <p onclick="currentSlide(2)" id="dis2" role='button' tabindex='0' aria-label='Speedy Searching' class="w-full display p-3 font-medium transform hover:text-primary-softred-0 cursor-pointer transition-all ease duration-200 lg:border-b-2">Speedy Searching</p>
+          </div>
+          <hr class="w-full md:hidden">
+          <div class="flex items-center justify-center min-w-40 md:w-1/3">
+            <p onclick="currentSlide(3)" id="dis3" role='button' tabindex='0' aria-label='Easy Sharing' class="w-full display p-3 font-medium transform hover:text-primary-softred-0 cursor-pointer transition-all ease duration-200 lg:border-b-2">Easy Sharing</p>
+          </div>
+          <hr class="w-full md:hidden">
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-4 sm:flex-row lg:my-16">
+        <div class="sm:w-1/2">
+          <div class="myTabs fade flex flex-col items-center justify-center relative">
+            <div class="bg-primary-softblue-0 w-5/6 h-5/6 absolute bottom-0 left-0 rounded-r-full -z-10"></div>
+            <div class="px-8 pb-8 lg:pl-32">
+              <img class="" src="../images/illustration-features-tab-1.svg" alt="Illustration photo one">              
+            </div>
+          </div>
+          <div class="myTabs fade flex flex-col items-center justify-center relative">
+            <div class="bg-primary-softblue-0 w-5/6 h-5/6 absolute bottom-0 left-0 rounded-r-full -z-10"></div>
+            <div class="px-8 pb-8 lg:pl-32">
+              <img class="" src="../images/illustration-features-tab-2.svg" alt="Illustration photo two">
+            </div>
+          </div>
+          <div class="myTabs fade flex flex-col items-center justify-center relative">
+            <div class="bg-primary-softblue-0 w-5/6 h-5/6 absolute bottom-0 left-0 rounded-r-full -z-10"></div>
+            <div class="px-8 pb-8 lg:pl-32">
+              <img src="../images/illustration-features-tab-3.svg" alt="Illustration photo three">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center p-4 sm:w-1/2 lg:pr-32">
+          <div id="bookmarking0" class="fade flex flex-col gap-4 items-center text-center sm:text-left sm:justify-start sm:items-start slide-text">
+            <h2 class="font-bold text-xl lg:text-3xl">Bookmark in one click</h2>
+            <p>Organize your bookmarks however you like. Our simple drag-and-drop interface 
+              gives you complete control over how you manage your favourite sites.
+            </p>
+            <button class="btn btn-primary btn-more sm:m-0 lg:rounded-lg">
+              More Info
+            </button>
+          </div>
+          <div id="bookmarking1" class="fade flex flex-col gap-4 items-center text-center slide-text sm:text-left sm:justify-start sm:items-start">
+            <h2 class="font-bold text-xl lg:text-3xl">Intelligent search</h2>
+            <p>Our powerful search feature will help you find saved sites in no time at all. 
+              No need to trawl through all of your bookmarks.
+            </p>
+            <button class="btn btn-primary btn-more sm:m-0 lg:rounded-lg">
+              More Info
+            </button>
+          </div>
+          <div id="bookmarking2" class="fade flex flex-col gap-4 items-center text-center slide-text sm:text-left sm:justify-start sm:items-start">
+            <h2 class="font-bold text-xl lg:text-3xl">Share your bookmarks</h2>
+            <p>Easily share your bookmarks and collections with others. Create a shareable 
+              link that you can send at the click of a button.
+            </p>
+            <button class="btn btn-primary btn-more sm:m-0">
+              More Info
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-col items-center gap-8 p-4 md:gap-16">
+        <div class="flex flex-col items-center text-center gap-4 sm:px-20 md:px-40 lg:px-80">
+          <h2 class="font-bold text-xl lg:text-3xl">Download the extension</h2>
+          <p>We’ve got more browsers in the pipeline. Please do let us know if you’ve 
+            got a favourite you’d like us to prioritize.
+          </p>
+        </div>
+        <div class="flex flex-col gap-8 md:flex-row lg:px-20 lg:gap-8 md:min-h-96 h-">
+          <div class="md:flex md:items-start">
+            <div class="flex flex-col rounded shadow-lg gap-4 cursor-pointer hover:shadow-neutral-verydarkblue-0 transition ease-out duration-500">
+              <div class="w-full flex justify-center mt-8">
+                <img src="../images/logo-chrome.svg" alt="Chrome logo">
+              </div>
+              <div class="w-full flex flex-col items-center justify-center">
+                <h3 class="font-bold mb-2">Add to Chrome</h3>
+                <p class="text-xs mb-8">Minimum version 62</p>
+                <img src="../images/bg-dots.svg" alt="Dotted background">
+              </div>
+              <div class="w-full px-4">
+                <button class="btn btn-primary btn-install">
+                  Add & Install Extension
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="md:flex md:items-center">
+            <div class="flex flex-col items-center rounded shadow-lg gap-4 cursor-pointer hover:shadow-neutral-verydarkblue-0 transition ease-out duration-500">
+              <div class="w-full flex justify-center mt-8">
+                <img src="../images/logo-firefox.svg" alt="Firefox logo">
+              </div>
+              <div class="w-full text-center">
+                <h3 class="font-bold mb-2">Add to Firefox</h3>
+               <p class="mb-8">Minimum version 55</p>
+               <img src="../images/bg-dots.svg" alt="Dotted background">
+              </div>
+              <div class="w-full px-4">
+                <button class="btn btn-primary btn-install">
+                 Add & Install Extension
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="md:flex md:items-end">
+            <div class="flex flex-col items-center rounded shadow-lg gap-4 cursor-pointer hover:shadow-neutral-verydarkblue-0 transition ease-out duration-500">
+              <div class="w-full flex justify-center mt-8">
+                <img src="../images/logo-opera.svg" alt="Opera logo">
+              </div>
+              <div class="w-full text-center">
+                <h3 class="font-bold mb-2">Add to Opera</h3>
+                <p class="mb-8">Minimum version 46</p>
+                <img src="../images/bg-dots.svg" alt="Dotted background">
+              </div>
+              <div class="w-full px-4">
+                <button class="btn btn-primary btn-install">
+                  Add & Install Extension
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>          
+      </section>
+
+      <section class="px-4 flex flex-col gap-8 sm:px-20 md:px-40 lg:px-80">
+        <div class="text-center flex flex-col items-center gap-4">
+          <h2 class="font-bold text-xl lg:text-3xl">Frequently Asked Questions</h2>
+          <p>Here are some of our FAQs. If you have any other questions you’d like 
+            answered please feel free to email us.
+          </p>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex flex-col justify-between gap-2 border-b-2 py-4">
+            <div class="flex justify-between items-center cursor-pointer questions hover:text-primary-softred-0">
+              <h3 class="font-semibold">What is Bookmark?</h3>
+              <img class="h-2 flip" src="../images/icon-arrow.svg" alt="Arrow icon">
+            </div>
+            <div id="answer0" class="showAnswer">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt 
+                justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between gap-2 border-b-2 py-4">
+            <div class="flex justify-between items-center cursor-pointer questions hover:text-primary-softred-0">
+              <h3 class="font-semibold">How can I request a new browser?</h3>
+              <img class="h-2 flip" src="../images/icon-arrow.svg" alt="Arrow icon">
+            </div>
+            <div id="answer1" class="showAnswer">
+              <p>Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. 
+                Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, 
+                ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. 
+                Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
+              </p>
+            </div>
+          </div>
+          <hr>
+          <div class="flex flex-col justify-between gap-2 border-b-2 py-4">
+            <div class="flex justify-between items-center cursor-pointer questions hover:text-primary-softred-0">
+              <h3 class="font-semibold">Is there a mobile app?</h3>
+              <img class="h-2 flip" src="../images/icon-arrow.svg" alt="Arrow icon">
+            </div>
+            <div id="answer2" class="showAnswer">
+              <p>Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum 
+                urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed 
+                sollicitudin ex et ultricies bibendum.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between gap-2 border-b-2 py-4">
+            <div class="flex justify-between items-center cursor-pointer questions hover:text-primary-softred-0">
+              <h3 class="font-semibold">What about other Chromium browsers?</h3>
+              <img class="h-2 flip" src="../images/icon-arrow.svg" alt="Arrow icon">
+            </div>
+            <div id="answer3" class="showAnswer">
+              <p>Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
+                vitae neque eget nisl gravida pellentesque non ut velit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex">
+          <button class="btn btn-primary btn-more">
+            More Info
+          </button>
+        </div>
+      </section>
+    </main>  
+
+    <footer class="flex flex-col justify-center items-center gap-4 text-white bg-neutral-verydarkblue-0">
+      <section class="bg-primary-softblue-0 grid gap-4 w-full py-12 sm:px-20 md:px-40 lg:px-80">
+        <div class="text-center text-white">
+          <p class="uppercase tracking-widest">35,000+ already joined</p>
+          <p class="font-semibold"> Stay up-to-date with what we’re doing</p>
+        </div>
+        <div class="px-4 lg:px-0">
+          <form id="form" class="flex flex-col gap-4 min-[480px]:flex-row min-[480px]:justify-between" method="POST" action="#">
+            <div class="form flex flex-col w-full rounded min-[480px]:w-2/3 relative">
+              <label for="email"></label>
+              <input id="email" class="w-full text-neutral-verydarkblue-0 rounded h-10 pl-2" type="text" placeholder="Enter Your Email address">              
+              <span class="text-white w-full -mt-1 font-light hidden italic rounded pl-2 bg-primary-softred-0" id="emailError">Whoops!...make sure its an email!</span>
+            </div>            
+            <div class="min-[480px]:w-1/3 flex"> 
+              <button id="submitBtn" type="submit" class="h-10 btn btn-login border-primary-softred-0 w-full bg-primary-softred-0 flex items-center justify-center">Contact Us</button>
+            </div>          
+          </form>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-8 lg:flex-row lg:w-full lg:px-32">
+        <div class="lg:mt-1">
+          <a class="logo" href="#" aria-label="Company logo">
+            <img class="h-auto" src="../images/logo-bookmark.svg" alt="Company logo">
+          </a>          
+        </div>
+        <div>
+          <ul class="uppercase text-xs flex flex-col gap-4 items-center tracking-widest font-thin lg:flex-row lg:pt-1">
+            <li><a class="nav-link relative" href="#">Features</a></li>
+            <li><a class="nav-link relative" href="#">Pricing</a></li>
+            <li><a class="nav-link relative" href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="flex justify-center gap-4 w-full lg:justify-end lg:mt-auto">
+          <a href="#" aria-label="Facebook">
+            <img class="cursor-pointer h-5 transform hover:scale-125 transition ease duration-300" src="../images/icon-facebook.svg" alt="Facebook icon">
+          </a>
+          <a href="#" aria-label="Twitter">
+            <img class="cursor-pointer h-5 transform hover:scale-125 transition ease duration-300" src="../images/icon-twitter.svg" alt="Twitter icon">
+          </a>
+          
+        </div>
+
+      </section>
+      <div>
+        <p class="text-xs">
+          Challenge by <a class="text-neutral-grayishblue-0" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a class="text-neutral-grayishblue-0" href="#">Khalagai</a>.
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script src="../index.js" charset="UTF-8"></script>
+</body>
+</html>
