@@ -6,7 +6,6 @@ const slides = document.querySelectorAll('.slide-text');
 const questions = document.querySelectorAll('.questions');
 const answers = document.querySelectorAll('.showAnswer');
 
-
 const openNav = () => {
     menu.style.height = "100vh";
     openMenu.style.display = "none";
@@ -24,46 +23,39 @@ closeMenu.addEventListener("click", closeNav);
 let slideIndex = 1;
 showSlides(slideIndex);
 
-
-const currentSlide = (n) => {
-  showSlides(slideIndex = n);
+function currentSlide(n) {
+  slideIndex = n;
+  showSlides(slideIndex);
 }
 
-const showSlides = (n) => {
-  let i;
-  let slides = document.getElementsByClassName("display");
-  let tabs = document.getElementsByClassName("myTabs");
-  let texts = document.getElementsByClassName("slide-text");
+function showSlides(n) {
+  const slides = document.querySelectorAll(".display");
+  const tabs = document.querySelectorAll(".myTabs");
+  const texts = document.querySelectorAll(".slide-text");
 
-  for (i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("active");  
-  }
-  for (i = 0; i < tabs.length; i++) {
-    tabs[i].style.display = "none";
-  }
-  for (i = 0; i < texts.length; i++) {
-    texts[i].style.display = "none";
-  }
-  slides[slideIndex-1].classList.add("active");  
-  tabs[slideIndex-1].style.display = "flex"; 
-  texts[slideIndex-1].style.display = "flex";  
+  slides.forEach(slide => slide.classList.remove("active"));
+  tabs.forEach(tab => tab.style.display = "none");
+  texts.forEach(text => text.style.display = "none");
+
+  slides[n - 1].classList.add("active");
+  tabs[n - 1].style.display = "flex";
+  texts[n - 1].style.display = "flex";
 }
-
 
 answers.forEach((answer) => {
-    answer.style.display = 'none';
+    answer.style.display = "none";
 });
 
 questions.forEach((question, index) => {
   question.setAttribute("role", "button");
   question.setAttribute("aria-expanded", "false");
-  question.setAttribute("tabindex", "0"); 
+  question.setAttribute("tabindex", "0");
 
   question.addEventListener("click", () => toggleAnswer(index));
   question.addEventListener("keypress", (event) => handleKeyPress(event, index));
   question.addEventListener("keydown", (event) => handleNavigation(event, index));
 });
-    
+
 const toggleAnswer = (index) => {
     const question = questions[index];
     const answer = document.getElementById(`answer${index}`);
@@ -100,7 +92,7 @@ const navigateTo = (index) => {
     }
 };
 
-const validateEmail = (email) => {
+function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
@@ -121,9 +113,9 @@ const validateEmail = (email) => {
       formDiv.classList.add('active');
     } else {
       emailError.classList.add('hidden');
+      emailError.classList.remove('block');
       formDiv.classList.remove('active');
       alert('Form submitted successfully!');
       // document.getElementById('form').submit();
     }
   });
-  
